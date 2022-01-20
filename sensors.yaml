@@ -1,0 +1,34 @@
+  - platform: template
+    sensors:
+      hko_current_text:
+        value_template: >-
+          {% if is_state("sensor.hko_forecast_icon","50") %} 天晴
+          {% elif is_state("sensor.hko_forecast_icon","51") %} 間有陽光
+          {% elif is_state("sensor.hko_forecast_icon","52") %} 短暫陽光
+          {% elif is_state("sensor.hko_forecast_icon","53") %} 晴間驟雨
+          {% elif is_state("sensor.hko_forecast_icon","54") %} 間晴驟雨	
+          {% elif is_state("sensor.hko_forecast_icon","60") %} 多雲
+          {% elif is_state("sensor.hko_forecast_icon","61") %} 密雲
+          {% elif is_state("sensor.hko_forecast_icon","62") %} 微雨
+          {% elif is_state("sensor.hko_forecast_icon","63") %} 雨
+          {% elif is_state("sensor.hko_forecast_icon","64") %} 大雨
+          {% elif is_state("sensor.hko_forecast_icon","65") %} 雷暴
+          {% elif is_state("sensor.hko_forecast_icon","70") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","71") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","72") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","73") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","74") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","75") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","76") %} 大致多雲
+          {% elif is_state("sensor.hko_forecast_icon","77") %} 大致良好
+          {% elif is_state("sensor.hko_forecast_icon","80") %} 大風
+          {% elif is_state("sensor.hko_forecast_icon","81") %} 乾燥
+          {% elif is_state("sensor.hko_forecast_icon","82") %} 潮濕
+          {% elif is_state("sensor.hko_forecast_icon","83") %} 霧
+          {% elif is_state("sensor.hko_forecast_icon","84") %} 薄霧
+          {% elif is_state("sensor.hko_forecast_icon","85") %} 煙霞
+          {% elif is_state("sensor.hko_forecast_icon","90") %} 炎熱
+          {% elif is_state("sensor.hko_forecast_icon","91") %} 回暖
+          {% elif is_state("sensor.hko_forecast_icon","92") %} 轉涼
+          {% elif is_state("sensor.hko_forecast_icon","93") %} 寒冷
+          {% endif %}
