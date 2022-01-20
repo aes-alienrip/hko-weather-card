@@ -1,0 +1,80 @@
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=tc
+    scan_interval: 1800
+    sensor:
+      - name: hko_forecast_summary
+        value_template: '{{ value_json.forecastDesc }}'
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc
+    scan_interval: 1800
+    sensor:
+      - name: hko_forecast_max_temp_0
+        value_template: '{{ value_json.weatherForecast[0].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_1
+        value_template: '{{ value_json.weatherForecast[1].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_2
+        value_template: '{{ value_json.weatherForecast[2].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_3
+        value_template: '{{ value_json.weatherForecast[3].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_4
+        value_template: '{{ value_json.weatherForecast[4].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_0
+        value_template: '{{ value_json.weatherForecast[0].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_1
+        value_template: '{{ value_json.weatherForecast[1].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_2
+        value_template: '{{ value_json.weatherForecast[2].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_3
+        value_template: '{{ value_json.weatherForecast[3].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_4
+        value_template: '{{ value_json.weatherForecast[4].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_icon_0
+        value_template: '{{ value_json.weatherForecast[0].ForecastIcon }}'
+      - name: hko_forecast_icon_1
+        value_template: '{{ value_json.weatherForecast[1].ForecastIcon }}'
+      - name: hko_forecast_icon_2
+        value_template: '{{ value_json.weatherForecast[2].ForecastIcon }}'
+      - name: hko_forecast_icon_3
+        value_template: '{{ value_json.weatherForecast[3].ForecastIcon }}'
+      - name: hko_forecast_icon_4
+        value_template: '{{ value_json.weatherForecast[4].ForecastIcon }}'
+      - name: hko_forecast_summary_0
+        value_template: '{{ value_json.weatherForecast[0].forecastWeather }}'
+      - name: hko_forecast_summary_1
+        value_template: '{{ value_json.weatherForecast[1].forecastWeather }}'
+      - name: hko_forecast_summary_2
+        value_template: '{{ value_json.weatherForecast[2].forecastWeather }}'
+      - name: hko_forecast_summary_3
+        value_template: '{{ value_json.weatherForecast[3].forecastWeather }}'
+      - name: hko_forecast_summary_4
+        value_template: '{{ value_json.weatherForecast[4].forecastWeather }}'
+      - name: hko_forecast_psr_0
+        value_template: '{{ value_json.weatherForecast[0].PSR }}'
+      - name: hko_forecast_psr_1
+        value_template: '{{ value_json.weatherForecast[1].PSR }}'
+      - name: hko_forecast_psr_2
+        value_template: '{{ value_json.weatherForecast[2].PSR }}'
+      - name: hko_forecast_psr_3
+        value_template: '{{ value_json.weatherForecast[3].PSR }}'
+      - name: hko_forecast_psr_4
+        value_template: '{{ value_json.weatherForecast[4].PSR }}'
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc
+    scan_interval: 1800
+    sensor:
+      - name: hko_temperature_hko
+        value_template: '{{ value_json.temperature.data[1].value }}'
+        unit_of_measurement: "°C"
+      - name: hko_humidity
+        value_template: '{{ value_json.humidity.data[0].value }}'
+        unit_of_measurement: "%"
+      - name: hko_forecast_icon
+        value_template: '{{ value_json.icon[0] }}'
