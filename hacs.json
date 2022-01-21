@@ -1,5 +1,5 @@
 {
-  "name": "Custom Animated Weather Card for HKO",
+  "name": "HKO Weather Card",
   "content_in_root": true,
   "filename": "hko-weather-card.js",
   "country": ["HK"]
