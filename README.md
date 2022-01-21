@@ -1,6 +1,8 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs) ![GitHub](https://img.shields.io/github/license/aes-alienrip/hko-weather-card?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/aes-alienrip/hko-weather-card?style=for-the-badge) ![Maintenance](https://img.shields.io/maintenance/yes/2022?style=for-the-badge)
 # Custom Animated Weather Card for Hong Kong Observatory
 
+![hko-weather](https://user-images.githubusercontent.com/73251414/150528943-da3b1f38-8c14-46ac-8888-b47f2f354b8d.png)
+
 # **Installation**
 --------------------------
 ## EASY Way? use HACS
