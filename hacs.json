@@ -2,5 +2,6 @@
   "name": "HKO Weather Card",
   "content_in_root": true,
   "filename": "hko-weather-card.js",
+  "render_readme": true,
   "country": ["HK"]
 }
