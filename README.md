@@ -3,6 +3,39 @@
 
 ![hko-weather](https://user-images.githubusercontent.com/73251414/150528943-da3b1f38-8c14-46ac-8888-b47f2f354b8d.png)
 
+## IMPORTANT CHANGES
+
+This is a weather card that works with **Hong Kong Observatory ONLY**
+
+This card is a modification of a fork of [DavidFW1960/bom-weather-card](https://github.com/DavidFW1960/bom-weather-card)
+
+This card provides MANY additional features as well as compatability with later versions of home assistant.
+New features:
+- Lit 2
+- Only use Day time icons for forecast for future days (days 1-5)
+- More icons
+- Adds Locale customisation for number formats
+- Added to card-picker in Lovelace
+- Added option to show minimum or maximum first in forecast
+- Added option to show 1 decimal place to temperatures
+- Added option to display windspeeds in knots
+- Show rainfall as an intensity or absolute number
+- Removed leading zeros if 12hr time
+- Added Wind Gust
+- Can use different icon sets
+- Added extra (5th) row of slots
+- Added slots (optional) for UV and fire danger ratings
+- Added possibility of rainfall to forecast
+
+NOTE: This card REQUIRES any weather component that can provide the required sensors.
+Parsing a non existant sensor to the card will cause the card to fail to display!
+
+The Weather Card provides current and forecast weather conditions using HA sensors. You configure the card by passing in sensor entities from the weather component.
+
+The card is very customizable.  You can configure many aspects of it's look and feel as well as which specific content to show by passing in customization flags and defining optional sensors.  Content can also be rearranged if desired.
+
+Hovering over a forecast day will display the daily weather summary in a tooltip popup if that option has been enabled.
+
 # **Installation**
 --------------------------
 ## EASY Way? use HACS
