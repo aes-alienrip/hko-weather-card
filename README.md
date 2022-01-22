@@ -223,7 +223,7 @@ You can replace the value ```[1]``` inside ```value_template: '{{ value_json.tem
 ~~~~
 
 #### Then install the icon files
-Please download [ALL icons required are in this file here](https://github.com/aes-alienrip/hko-weather-card/blob/master/hko_weather_icons.zip)
+Please download [hko_weather_icons.zip](https://github.com/aes-alienrip/hko-weather-card/blob/master/hko_weather_icons.zip)
 Put them in ```<config-dir>/www/icons/weather_icons``` and then sub folders ```animated``` and ```static```.  Create the directories if necessary.
 
 You should end up with the following folders:
@@ -242,8 +242,8 @@ This structure is after all configuration is done. If you install via HACS you m
             └── hko-weather-card.js.gz
     └── icons
 	└── weather_icons
-		└── animated     ### Containing the animated icons from weather_icons.zip animated directory
-		└── static       ### Containing the animated icons from weather_icons.zip static directory
+		└── animated     ### Containing the animated icons from hko_weather_icons.zip animated directory
+		└── static       ### Containing the static icons from hko_weather_icons.zip static directory
 ~~~~
 
 #### MANUAL INSTALL:-
@@ -257,8 +257,8 @@ This structure is after all configuration is done. If you install via HACS you m
     	└── hko-weather-card.js
     └── icons
 	└── weather_icons
-		└── animated     ### Containing the animated icons from weather_icons.zip animated directory
-		└── static       ### Containing the animated icons from weather_icons.zip static directory
+		└── animated     ### Containing the animated icons from hko_weather_icons.zip animated directory
+		└── static       ### Containing the static icons from hko_weather_icons.zip static directory
 ~~~~
 This structure is after all configuration is done. You must still configure the yaml and icons manually.
 
