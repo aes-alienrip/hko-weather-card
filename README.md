@@ -401,16 +401,16 @@ show_decimals: false
 | separator_top_margin     | **6em** / px or em value           | Sets the top margin of the separator line                                   |
 | summary_top_padding      | **1em** / px or em                 | Sets the gap between the forecast and summary text                          |
 | summary_font_size        | **1em** / px or em                 | Sets the font size for the summary text                                     |
-| slot_l1                  | **sun_next**                       | Sets the value used in current conditions slot l4 : See slots for more info |
-| slot_l2                  | **daytime_high**                   | Sets the value used in current conditions slot l1 : See slots for more info |
-| slot_l3                  | **daytime_low**                    | Sets the value used in current conditions slot l2 : See slots for more info |
-| slot_l4                  | **wind**                           | Sets the value used in current conditions slot l3 : See slots for more info |
-| slot_l5                  | **pressure**                       | Sets the value used in current conditions slot l4 : See slots for more info |
-| slot_r1                  | **sun_following**                  | Sets the value used in current conditions slot r4 : See slots for more info |
+| slot_l1                  | **sun_next**                       | Sets the value used in current conditions slot l1 : See slots for more info |
+| slot_l2                  | **daytime_high**                   | Sets the value used in current conditions slot l2 : See slots for more info |
+| slot_l3                  | **daytime_low**                    | Sets the value used in current conditions slot l3 : See slots for more info |
+| slot_l4                  | **wind**                           | Sets the value used in current conditions slot l4 : See slots for more info |
+| slot_l5                  | **pressure**                       | Sets the value used in current conditions slot l5 : See slots for more info |
+| slot_r1                  | **sun_following**                  | Sets the value used in current conditions slot r1 : See slots for more info |
 | slot_r2                  | **humidity**                       | Sets the value used in current conditions slot r2 : See slots for more info |
-| slot_r3                  | **pop**                            | Sets the value used in current conditions slot r1 : See slots for more info |
-| slot_r4                  | **uv_summary**                     | Sets the value used in current conditions slot r3 : See slots for more info |
-| slot_r5                  | **fire_summary**                   | Sets the value used in current conditions slot r4 : See slots for more info |
+| slot_r3                  | **pop**                            | Sets the value used in current conditions slot r3 : See slots for more info |
+| slot_r4                  | **uv_summary**                     | Sets the value used in current conditions slot r4 : See slots for more info |
+| slot_r5                  | **fire_summary**                   | Sets the value used in current conditions slot r5 : See slots for more info |
 | show_decimals            | **false** / true                   | Sets card to render current and apparent temperature to 1 decimal place     | 
 
 **Slots**
