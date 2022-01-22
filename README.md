@@ -68,93 +68,93 @@ rest: !include rest.yaml
 sensor: !include sensors.yaml
 ~~~~
 
-#### Create rest.yaml and add the following RESTful sensors:
+#### Create [rest.yaml](https://raw.githubusercontent.com/aes-alienrip/hko-weather-card/master/rest.yaml) and add the following RESTful sensors:
 ~~~~
-- resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=tc
-scan_interval: 1800
-sensor:
-- name: hko_forecast_summary
-value_template: '{{ value_json.forecastDesc }}'
-- resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc
-scan_interval: 1800
-sensor:
-- name: hko_forecast_max_temp_0
-value_template: '{{ value_json.weatherForecast[0].forecastMaxtemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_max_temp_1
-value_template: '{{ value_json.weatherForecast[1].forecastMaxtemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_max_temp_2
-value_template: '{{ value_json.weatherForecast[2].forecastMaxtemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_max_temp_3
-value_template: '{{ value_json.weatherForecast[3].forecastMaxtemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_max_temp_4
-value_template: '{{ value_json.weatherForecast[4].forecastMaxtemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_min_temp_0
-value_template: '{{ value_json.weatherForecast[0].forecastMintemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_min_temp_1
-value_template: '{{ value_json.weatherForecast[1].forecastMintemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_min_temp_2
-value_template: '{{ value_json.weatherForecast[2].forecastMintemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_min_temp_3
-value_template: '{{ value_json.weatherForecast[3].forecastMintemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_min_temp_4
-value_template: '{{ value_json.weatherForecast[4].forecastMintemp.value }}'
-unit_of_measurement: "°C"
-- name: hko_forecast_icon_0
-value_template: '{{ value_json.weatherForecast[0].ForecastIcon }}'
-- name: hko_forecast_icon_1
-value_template: '{{ value_json.weatherForecast[1].ForecastIcon }}'
-- name: hko_forecast_icon_2
-value_template: '{{ value_json.weatherForecast[2].ForecastIcon }}'
-- name: hko_forecast_icon_3
-value_template: '{{ value_json.weatherForecast[3].ForecastIcon }}'
-- name: hko_forecast_icon_4
-value_template: '{{ value_json.weatherForecast[4].ForecastIcon }}'
-- name: hko_forecast_summary_0
-value_template: '{{ value_json.weatherForecast[0].forecastWeather }}'
-- name: hko_forecast_summary_1
-value_template: '{{ value_json.weatherForecast[1].forecastWeather }}'
-- name: hko_forecast_summary_2
-value_template: '{{ value_json.weatherForecast[2].forecastWeather }}'
-- name: hko_forecast_summary_3
-value_template: '{{ value_json.weatherForecast[3].forecastWeather }}'
-- name: hko_forecast_summary_4
-value_template: '{{ value_json.weatherForecast[4].forecastWeather }}'
-- name: hko_forecast_psr_0
-value_template: '{{ value_json.weatherForecast[0].PSR }}'
-- name: hko_forecast_psr_1
-value_template: '{{ value_json.weatherForecast[1].PSR }}'
-- name: hko_forecast_psr_2
-value_template: '{{ value_json.weatherForecast[2].PSR }}'
-- name: hko_forecast_psr_3
-value_template: '{{ value_json.weatherForecast[3].PSR }}'
-- name: hko_forecast_psr_4
-value_template: '{{ value_json.weatherForecast[4].PSR }}'
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=tc
+    scan_interval: 1800
+    sensor:
+      - name: hko_forecast_summary
+        value_template: '{{ value_json.forecastDesc }}'
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc
+    scan_interval: 1800
+    sensor:
+      - name: hko_forecast_max_temp_0
+        value_template: '{{ value_json.weatherForecast[0].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_1
+        value_template: '{{ value_json.weatherForecast[1].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_2
+        value_template: '{{ value_json.weatherForecast[2].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_3
+        value_template: '{{ value_json.weatherForecast[3].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_max_temp_4
+        value_template: '{{ value_json.weatherForecast[4].forecastMaxtemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_0
+        value_template: '{{ value_json.weatherForecast[0].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_1
+        value_template: '{{ value_json.weatherForecast[1].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_2
+        value_template: '{{ value_json.weatherForecast[2].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_3
+        value_template: '{{ value_json.weatherForecast[3].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_min_temp_4
+        value_template: '{{ value_json.weatherForecast[4].forecastMintemp.value }}'
+        unit_of_measurement: "°C"
+      - name: hko_forecast_icon_0
+        value_template: '{{ value_json.weatherForecast[0].ForecastIcon }}'
+      - name: hko_forecast_icon_1
+        value_template: '{{ value_json.weatherForecast[1].ForecastIcon }}'
+      - name: hko_forecast_icon_2
+        value_template: '{{ value_json.weatherForecast[2].ForecastIcon }}'
+      - name: hko_forecast_icon_3
+        value_template: '{{ value_json.weatherForecast[3].ForecastIcon }}'
+      - name: hko_forecast_icon_4
+        value_template: '{{ value_json.weatherForecast[4].ForecastIcon }}'
+      - name: hko_forecast_summary_0
+        value_template: '{{ value_json.weatherForecast[0].forecastWeather }}'
+      - name: hko_forecast_summary_1
+        value_template: '{{ value_json.weatherForecast[1].forecastWeather }}'
+      - name: hko_forecast_summary_2
+        value_template: '{{ value_json.weatherForecast[2].forecastWeather }}'
+      - name: hko_forecast_summary_3
+        value_template: '{{ value_json.weatherForecast[3].forecastWeather }}'
+      - name: hko_forecast_summary_4
+        value_template: '{{ value_json.weatherForecast[4].forecastWeather }}'
+      - name: hko_forecast_psr_0
+        value_template: '{{ value_json.weatherForecast[0].PSR }}'
+      - name: hko_forecast_psr_1
+        value_template: '{{ value_json.weatherForecast[1].PSR }}'
+      - name: hko_forecast_psr_2
+        value_template: '{{ value_json.weatherForecast[2].PSR }}'
+      - name: hko_forecast_psr_3
+        value_template: '{{ value_json.weatherForecast[3].PSR }}'
+      - name: hko_forecast_psr_4
+        value_template: '{{ value_json.weatherForecast[4].PSR }}'
 
-- resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc
-scan_interval: 1800
-sensor:
-- name: hko_temperature_hko
-value_template: '{{ value_json.temperature.data[1].value }}'
-unit_of_measurement: "°C"
-- name: hko_humidity
-value_template: '{{ value_json.humidity.data[0].value }}'
-unit_of_measurement: "%"
-- name: hko_forecast_icon
-value_template: '{{ value_json.icon[0] }}'
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc
+    scan_interval: 1800
+    sensor:
+      - name: hko_temperature_hko
+        value_template: '{{ value_json.temperature.data[1].value }}'
+        unit_of_measurement: "°C"
+      - name: hko_humidity
+        value_template: '{{ value_json.humidity.data[0].value }}'
+        unit_of_measurement: "%"
+      - name: hko_forecast_icon
+        value_template: '{{ value_json.icon[0] }}'
 ~~~~
 
 ```sensor.hko_temperature_hko``` can change to different weather station according to [HKO API](https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc)
 
-You can replace the value inside ```value_template: '{{ value_json.temperature.data[1].value }}'``` as the following table:
+You can replace the value ```[1]``` inside ```value_template: '{{ value_json.temperature.data[1].value }}'``` as the following table:
 ~~~~
 0 = 京士柏
 1 ＝ 香港天文台
@@ -184,50 +184,50 @@ You can replace the value inside ```value_template: '{{ value_json.temperature.d
 25 ＝ 元朗公園
 26 ＝ 大美督
 ~~~~
-#### Create sensors.yaml and add the following template sensor:
+#### Create [sensors.yaml](https://github.com/aes-alienrip/hko-weather-card/blob/master/sensors.yaml) and add the following template sensor:
 ~~~~
-- platform: template
-sensors:
-hko_current_text:
-value_template: >-
-{% if is_state("sensor.hko_forecast_icon","50") %} 天晴
-{% elif is_state("sensor.hko_forecast_icon","51") %} 間有陽光
-{% elif is_state("sensor.hko_forecast_icon","52") %} 短暫陽光
-{% elif is_state("sensor.hko_forecast_icon","53") %} 晴間驟雨
-{% elif is_state("sensor.hko_forecast_icon","54") %} 間晴驟雨
-{% elif is_state("sensor.hko_forecast_icon","60") %} 多雲
-{% elif is_state("sensor.hko_forecast_icon","61") %} 密雲
-{% elif is_state("sensor.hko_forecast_icon","62") %} 微雨
-{% elif is_state("sensor.hko_forecast_icon","63") %} 雨
-{% elif is_state("sensor.hko_forecast_icon","64") %} 大雨
-{% elif is_state("sensor.hko_forecast_icon","65") %} 雷暴
-{% elif is_state("sensor.hko_forecast_icon","70") %} 天色良好
-{% elif is_state("sensor.hko_forecast_icon","71") %} 天色良好
-{% elif is_state("sensor.hko_forecast_icon","72") %} 天色良好
-{% elif is_state("sensor.hko_forecast_icon","73") %} 天色良好
-{% elif is_state("sensor.hko_forecast_icon","74") %} 天色良好
-{% elif is_state("sensor.hko_forecast_icon","75") %} 天色良好
-{% elif is_state("sensor.hko_forecast_icon","76") %} 大致多雲
-{% elif is_state("sensor.hko_forecast_icon","77") %} 大致良好
-{% elif is_state("sensor.hko_forecast_icon","80") %} 大風
-{% elif is_state("sensor.hko_forecast_icon","81") %} 乾燥
-{% elif is_state("sensor.hko_forecast_icon","82") %} 潮濕
-{% elif is_state("sensor.hko_forecast_icon","83") %} 霧
-{% elif is_state("sensor.hko_forecast_icon","84") %} 薄霧
-{% elif is_state("sensor.hko_forecast_icon","85") %} 煙霞
-{% elif is_state("sensor.hko_forecast_icon","90") %} 炎熱
-{% elif is_state("sensor.hko_forecast_icon","91") %} 回暖
-{% elif is_state("sensor.hko_forecast_icon","92") %} 轉涼
-{% elif is_state("sensor.hko_forecast_icon","93") %} 寒冷
-{% endif %}
+  - platform: template
+    sensors:
+      hko_current_text:
+        value_template: >-
+          {% if is_state("sensor.hko_forecast_icon","50") %} 天晴
+          {% elif is_state("sensor.hko_forecast_icon","51") %} 間有陽光
+          {% elif is_state("sensor.hko_forecast_icon","52") %} 短暫陽光
+          {% elif is_state("sensor.hko_forecast_icon","53") %} 晴間驟雨
+          {% elif is_state("sensor.hko_forecast_icon","54") %} 間晴驟雨	
+          {% elif is_state("sensor.hko_forecast_icon","60") %} 多雲
+          {% elif is_state("sensor.hko_forecast_icon","61") %} 密雲
+          {% elif is_state("sensor.hko_forecast_icon","62") %} 微雨
+          {% elif is_state("sensor.hko_forecast_icon","63") %} 雨
+          {% elif is_state("sensor.hko_forecast_icon","64") %} 大雨
+          {% elif is_state("sensor.hko_forecast_icon","65") %} 雷暴
+          {% elif is_state("sensor.hko_forecast_icon","70") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","71") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","72") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","73") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","74") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","75") %} 天色良好
+          {% elif is_state("sensor.hko_forecast_icon","76") %} 大致多雲
+          {% elif is_state("sensor.hko_forecast_icon","77") %} 大致良好
+          {% elif is_state("sensor.hko_forecast_icon","80") %} 大風
+          {% elif is_state("sensor.hko_forecast_icon","81") %} 乾燥
+          {% elif is_state("sensor.hko_forecast_icon","82") %} 潮濕
+          {% elif is_state("sensor.hko_forecast_icon","83") %} 霧
+          {% elif is_state("sensor.hko_forecast_icon","84") %} 薄霧
+          {% elif is_state("sensor.hko_forecast_icon","85") %} 煙霞
+          {% elif is_state("sensor.hko_forecast_icon","90") %} 炎熱
+          {% elif is_state("sensor.hko_forecast_icon","91") %} 回暖
+          {% elif is_state("sensor.hko_forecast_icon","92") %} 轉涼
+          {% elif is_state("sensor.hko_forecast_icon","93") %} 寒冷
+          {% endif %}
 ~~~~
 
 #### Then install the icon files
 Please download [ALL icons required are in this file here](https://github.com/aes-alienrip/hko-weather-card/blob/master/hko_weather_icons.zip)
-Put them in ```<config-dir>/www/icons/weather_icons``` and then sub folders animated and static.  Create the directories if necessary.
+Put them in ```<config-dir>/www/icons/weather_icons``` and then sub folders ```animated``` and ```static```.  Create the directories if necessary.
 
 You should end up with the following folders:
-This structure is after all configuration is done. If you install via HACS you must still configure the package/yaml and icons manually.
+This structure is after all configuration is done. If you install via HACS you must still configure the yaml and icons manually.
 
 #### HACS:-
 ~~~~
@@ -294,7 +294,7 @@ This card has been added to the custom-card-picker in Lovelace
 ![image](card-picker.png)
 
 
-**An example configuration is in lovelace.yaml - this can be pasted into the manual card configuration in the GUI editor**
+**An example configuration is in [lovelace.yaml](https://github.com/aes-alienrip/hko-weather-card/blob/master/lovelace.yaml) - this can be pasted into the manual card configuration in the GUI editor**
 If you paste it in the raw editor or in a yaml file, take care with the indenting.
 
 Required entries must be present 
