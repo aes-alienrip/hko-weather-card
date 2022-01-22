@@ -365,7 +365,7 @@ show_decimals: false
 --------------------------
 | Flag                     | Values                             | Usage                                                                       |
 |--------------------------|------------------------------------|-----------------------------------------------------------------------------|
-| locale                   | **zh** / en etc.                   | Sets locale display of day names and time formats                           |
+| locale                   | **en** / zh etc.                   | Sets locale display of day names and time formats                           |
 | static_icons             | true / **false**                   | Switches between static (true) and animated (false) icons                   |
 | tooltips                 | true / **false**                   | Enables tooltips that show daily forecast summary                           |
 | tooltip_width            | **110**                            | Sets the width of the tooltip in px                                         |
@@ -381,36 +381,36 @@ show_decimals: false
 | show_separator           | true / **false**                   | Shows separator between current conditions columns and current temp / Icon  |
 | tempformat               | highlow / **noentry**              | Any setting for this flag will trigger the option to show max/min in daily  |
 | time_format              | **locale** / 12 / 24               | Sets the format sunset and sunrise times. locale format is the default.     |
-| temp_top_margin          | **0px** / px or em value           | Sets the top margin of the Temperature.                                     |
+| temp_top_margin          | **9px** / px or em value           | Sets the top margin of the Temperature.                                     |
 | temp_font_weight         | **300** / numeric value            | Sets the font weight of the Temperature.                                    |
 | temp_font_size           | **4em** / em value                 | Sets the font size of the Temperature.                                      |
 | temp_right_pos           | **0.85em** / px or em value        | Sets the right position of the Temperature.                                 |
-| temp_uom_top_margin      | **-12px** / px or em value         | Sets the top margin of the Temperature Unit of Meaure.                      |
+| temp_uom_top_margin      | **-3px** / px or em value         | Sets the top margin of the Temperature Unit of Meaure.                      |
 | temp_uom_right_margin    | **4px** / px or em value           | Sets the right margin of the Temperature Unit of Measure.                   |
 | apparent_top_margin      | **45px** / px or em value          | Sets the top margin of the apparent (feels Like) temperature                |
 | apparent_right_pos       | **1em** / px or em value           | Sets the right position of the apparent (feels Like) temperature            |
 | apparent_right_margin    | **1em** / px or em value           | Sets the right margin of the apparent (feels Like) temperature              |
-| current_text_top_margin  | **4.5em** / px or em value         | Sets the top margin of the current temperature text                         |
+| current_text_top_margin  | **0.8em** / px or em value         | Sets the top margin of the current temperature text                         |
 | current_text_left_pos    | **0px** / px or em value           | Sets the left position of the current temperature text                      |
-| current_text_font_size   | **1.5em** / em value               | Sets the font size of the current temperature text                          |
+| current_text_font_size   | **2em** / em value                 | Sets the font size of the current temperature text                          |
 | current_text_alignment   | **center** / left, right or center | Sets the alignment of current text                                          |
 | current_text_width       | **100%** / px, em or %             | Sets the width of current text                                              |
 | current_data_top_margin  | **10em** / px or em value          | Sets the top margin of the current data blocks                              |
-| large_icon_top_margin    | **-3.2em** / px or em value        | Sets the top margin of the current conditions icon                          |
+| large_icon_top_margin    | **-3em** / px or em value          | Sets the top margin of the current conditions icon                          |
 | large_icon_left_position | **0px** / px or em value           | Sets the left position of the current conditions icon                       |
 | separator_top_margin     | **6em** / px or em value           | Sets the top margin of the separator line                                   |
-| summary_top_padding      | **2em** / px or em                 | Sets the gap between the forecast and summary text                          |
-| summary_font_size        | **0.8em** / px or em               | Sets the font size for the summary text                                     |
-| slot_l1                  | **daytime_high**                   | Sets the value used in current conditions slot l1 : See slots for more info |
-| slot_l2                  | **daytime_low**                    | Sets the value used in current conditions slot l2 : See slots for more info |
-| slot_l3                  | **wind**                           | Sets the value used in current conditions slot l3 : See slots for more info |
-| slot_l4                  | **pressure**                       | Sets the value used in current conditions slot l4 : See slots for more info |
-| slot_l5                  | **sun_next**                       | Sets the value used in current conditions slot l4 : See slots for more info |
-| slot_r1                  | **pop**                            | Sets the value used in current conditions slot r1 : See slots for more info |
+| summary_top_padding      | **1em** / px or em                 | Sets the gap between the forecast and summary text                          |
+| summary_font_size        | **1em** / px or em                 | Sets the font size for the summary text                                     |
+| slot_l1                  | **sun_next**                       | Sets the value used in current conditions slot l4 : See slots for more info |
+| slot_l2                  | **daytime_high**                   | Sets the value used in current conditions slot l1 : See slots for more info |
+| slot_l3                  | **daytime_low**                    | Sets the value used in current conditions slot l2 : See slots for more info |
+| slot_l4                  | **wind**                           | Sets the value used in current conditions slot l3 : See slots for more info |
+| slot_l5                  | **pressure**                       | Sets the value used in current conditions slot l4 : See slots for more info |
+| slot_r1                  | **sun_following**                  | Sets the value used in current conditions slot r4 : See slots for more info |
 | slot_r2                  | **humidity**                       | Sets the value used in current conditions slot r2 : See slots for more info |
-| slot_r3                  | **uv_summary**                     | Sets the value used in current conditions slot r3 : See slots for more info |
-| slot_r4                  | **fire_summary**                   | Sets the value used in current conditions slot r4 : See slots for more info |
-| slot_r5                  | **sun_following**                  | Sets the value used in current conditions slot r4 : See slots for more info |
+| slot_r3                  | **pop**                            | Sets the value used in current conditions slot r1 : See slots for more info |
+| slot_r4                  | **uv_summary**                     | Sets the value used in current conditions slot r3 : See slots for more info |
+| slot_r5                  | **fire_summary**                   | Sets the value used in current conditions slot r4 : See slots for more info |
 | show_decimals            | **false** / true                   | Sets card to render current and apparent temperature to 1 decimal place     | 
 
 **Slots**
