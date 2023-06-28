@@ -291,7 +291,63 @@ template: !include template.yaml
           {% set e = humid / 100 * 6.105 * e**(17.27 * temp / (237.7 + temp)) | float(0) %}
           {{ (temp * 1.07 + 0.2 * e - 0.65 * windspeed / 3600 * 1000 - 2.7) | round(1, default=0) }}
 ~~~~
+#### Or in English if preferred:
+~~~~
+- sensor:
+    - name: hko_current_text
+      state: >
+        {% if is_state("sensor.hko_forecast_icon","50") %} Sun
+        {% elif is_state("sensor.hko_forecast_icon","51") %} Occasional Sun
+        {% elif is_state("sensor.hko_forecast_icon","52") %} Short bursts of sun
+        {% elif is_state("sensor.hko_forecast_icon","53") %} Rain showers
+        {% elif is_state("sensor.hko_forecast_icon","54") %} Intermittent sunny showers	
+        {% elif is_state("sensor.hko_forecast_icon","60") %} Partly Cloudy
+        {% elif is_state("sensor.hko_forecast_icon","61") %} Overcast
+        {% elif is_state("sensor.hko_forecast_icon","62") %} Light rain
+        {% elif is_state("sensor.hko_forecast_icon","63") %} Rain
+        {% elif is_state("sensor.hko_forecast_icon","64") %} Heavy Rain
+        {% elif is_state("sensor.hko_forecast_icon","65") %} Rain and Thunder
+        {% elif is_state("sensor.hko_forecast_icon","70") %} Good weather
+        {% elif is_state("sensor.hko_forecast_icon","71") %} Good weather
+        {% elif is_state("sensor.hko_forecast_icon","72") %} Good weather
+        {% elif is_state("sensor.hko_forecast_icon","73") %} Good weather
+        {% elif is_state("sensor.hko_forecast_icon","74") %} Good weather
+        {% elif is_state("sensor.hko_forecast_icon","75") %} Good weather
+        {% elif is_state("sensor.hko_forecast_icon","76") %} Generally Cloudy
+        {% elif is_state("sensor.hko_forecast_icon","77") %} Generally Good
+        {% elif is_state("sensor.hko_forecast_icon","80") %} Windy
+        {% elif is_state("sensor.hko_forecast_icon","81") %} Dry
+        {% elif is_state("sensor.hko_forecast_icon","82") %} Wet
+        {% elif is_state("sensor.hko_forecast_icon","83") %} Foggy
+        {% elif is_state("sensor.hko_forecast_icon","84") %} Moderate Fog
+        {% elif is_state("sensor.hko_forecast_icon","85") %} Light Fog
+        {% elif is_state("sensor.hko_forecast_icon","90") %} Hot
+        {% elif is_state("sensor.hko_forecast_icon","91") %} Warm
+        {% elif is_state("sensor.hko_forecast_icon","92") %} Cooling down
+        {% elif is_state("sensor.hko_forecast_icon","93") %} Cold
+        {% endif %}
 
+- sensor:
+    - name: hko_uvindex_exposure_level
+      state: >
+        {% set uv = states('sensor.hko_uvindex') | float(0) %}
+        {% if uv >= 11 %} Extremely High
+        {% elif uv >= 8 %} Very High
+        {% elif uv >= 6 %} High
+        {% elif uv >= 3 %} Moderate
+        {% elif uv >= 0 %} Low
+        {% endif %}
+
+- sensor:
+    - name: hko_apparent_temp
+      unit_of_measurement: "°C"
+      state: >
+        {% set temp = states('sensor.hko_temperature') | float(0) %}
+        {% set humid = states('sensor.hko_humidity') | float(0) %}
+        {% set windspeed = states('sensor.hko_wind_speed') | float(0) %}
+        {% set e = humid / 100 * 6.105 * e**(17.27 * temp / (237.7 + temp)) | float(0) %}
+        {{ (temp * 1.07 + 0.2 * e - 0.65 * windspeed / 3600 * 1000 - 2.7) | round(1, default=0) }}
+~~~~
 #### Then install the icon files
 Please download [hko_weather_icons1.1.4a.zip](https://github.com/aes-alienrip/hko-weather-card/blob/master/weather_icons1.1.4a.zip)
 Put them in ```<config-dir>/www/icons/weather_icons``` and then sub folders ```animated``` and ```static```.  Create the directories if necessary.
