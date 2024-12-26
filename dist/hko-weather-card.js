@@ -1,11 +1,12 @@
 import {
   LitElement,
   html,
+  css
 } from "https://esm.run/lit-element@4.0.6/lit-element.js?module";
 
 // #### Add card info to console
 console.info(
-  `%cHKO-WEATHER-CARD\n%cVersion 1.2.1b  `,
+  `%cHKO-WEATHER-CARD\n%cVersion 1.2.1b Legacy`,
   "color: #043ff6; font-weight: bold; background: white",
   "color: white; font-weight: bold; background: #043ff6"
 );
@@ -89,9 +90,6 @@ class HKOWeatherCard extends LitElement {
 
 // Build HTML
     return html`
-      <style>
-      ${this.style()}
-      </style>
       <ha-card class = "card">
         <div>
           ${biggerIcon}
@@ -1036,50 +1034,9 @@ get is12Hour() {
 // ##### style: returns the CSS style classes for the card
 // ####
 
-style() {
+  static get styles() {
 
-  // Get config flags or set defaults if not configured
-  var tooltipBGColor = this.config.tooltip_bg_color || "rgb( 75,155,239)";
-  var tooltipFGColor = this.config.tooltip_fg_color || "#fff";
-  var tooltipBorderColor = this.config.tooltip_border_color || "rgb(255,161,0)";
-  var tooltipBorderWidth = this.config.tooltip_border_width || "1";
-  var tooltipCaretSize = this.config.tooltip_caret_size || "5";
-  var tooltipWidth = this.config.tooltip_width || "110px";
-  var tooltipLeftOffset = this.config.tooltip_left_offset || "-12";
-  var tooltipVisible = this.config.tooltips ? "visible" : "hidden";
-  var warntooltipWidth = this.config.warntooltip_width || "200px";
-  var tempTopMargin = this.config.temp_top_margin || "9px";
-  var tempFontWeight = this.config.temp_font_weight || "300";
-  var tempFontSize = this.config.temp_font_size || "4em";
-  var tempRightPos = this.config.temp_right_pos || "0.7em";
-  var tempUOMTopMargin = this.config.temp_uom_top_margin || "-3px";
-  var tempUOMRightMargin = this.config.temp_uom_right_margin || "-4px";
-  var topbarTopMargin = this.config.topbar_top_margin || "55px";
-  var topbarRightPos =  this.config.topbar_right_pos || "0.3em";
-  var topbarRightMargin = this.config.topbar_right_margin || "1em";
-  var currentTextTopMargin = this.config.current_text_top_margin || "0.6em";
-  var currentTextLeftPos = this.config.current_text_left_pos || "0px";
-  var currentTextFontSize = this.config.current_text_font_size || "2em";
-  var currentTextWidth = this.config.current_text_width || "100%";
-  var currentTextAlignment = this.config.current_text_alignment || "center";
-  var largeIconTopMargin = this.config.large_icon_top_margin || "-3em";
-  var largeIconLeftPos = this.config.large_icon_left_pos || "0px";
-  var currentDataTopMargin = this.config.current_data_top_margin ? this.config.current_data_top_margin : this.config.show_separator ? "0em" : "0.5em";
-  var separatorTopMargin = this.config.separator_top_margin || "6em";
-  var summaryTopPadding = this.config.summary_top_padding || "1em";
-  var summaryFontSize = this.config.summary_font_size || "1em";
-  var warnsumIconMargin = this.config.warnsum_icon_margin || "0px";
-  var tcwsWidth = this.config.tcws_width || "40px";
-  var tcwsHeight = this.config.tcws_height || "40px";
-  var tcwsTopMargin = this.config.tcws_top_margin || "40px";
-  var tcwsLeftPos =  this.config.tcws_left_pos || "0em";
-  var tcwsLeftMargin = this.config.tcws_left_margin || "8.2em";
-  var oldDailyFormatHeight = this.config.old_daily_format === true ? 1.5 : 0;
-  var popHeight = this.config.entity_pop_1 && this.config.entity_pop_2 && this.config.entity_pop_3 && this.config.entity_pop_4 && this.config.entity_pop_5 ? 1.5 : 0;
-  var rhHeight = this.config.entity_forecast_high_rh_1 && this.config.entity_forecast_high_rh_2 && this.config.entity_forecast_high_rh_3 && this.config.entity_forecast_high_rh_4 && this.config.entity_forecast_high_rh_5 && this.config.entity_forecast_low_rh_1 && this.config.entity_forecast_low_rh_2 && this.config.entity_forecast_low_rh_3 && this.config.entity_forecast_low_rh_4 && this.config.entity_forecast_low_rh_5 ? 1.5 : 0;
-  var forecastHeight = this.config.forecast_height ? this.config.forecast_height : 9.9 + oldDailyFormatHeight + popHeight + rhHeight;
-
-  return html`
+  return css`
       .clear {
         clear: both;
         line-height:1.2;
@@ -1101,54 +1058,54 @@ style() {
       }
 
       .line {
-        margin-top: ${separatorTopMargin};
+        margin-top: 6em;
         margin-left: 0.3em;
         margin-right: 0.3em;
       }
 
       .hiddenline {
-        margin-top: ${separatorTopMargin};
+        margin-top: 6em;
         margin-bottom: 0em;
         opacity: 0;
       }
 
       .temp {
-        font-weight: ${tempFontWeight};
-        font-size: ${tempFontSize};
+        font-weight: 300;
+        font-size: 4em;
         color: var(--primary-text-color);
         position: absolute;
-        right: ${tempRightPos};
-        margin-top: ${tempTopMargin} !important;
+        right: 0.7em;
+        margin-top: 9px !important;
       }
 
       .tempc {
-        font-weight: ${tempFontWeight};
+        font-weight: 300;
         font-size: 1.5em;
         vertical-align: super;
         color: var(--primary-text-color);
         position: absolute;
         right: 1em;
-        margin-top: ${tempUOMTopMargin} !important;
-        margin-right: ${tempUOMRightMargin} !important;
+        margin-top: -3px !important;
+        margin-right: -4px !important;
       }
 
       .topbar {
         color: var(--primary-text-color);
         position: absolute;
-        right: ${topbarRightPos};
-        margin-top: ${topbarTopMargin};
-        margin-right: ${topbarRightMargin};
+        right: 0.3em;
+        margin-top: 55px;
+        margin-right: 1em;
       }
 
       .currentText {
-        font-size: ${currentTextFontSize};
+        font-size: 2em;
         color: var(--secondary-text-color);
         position: absolute;
         white-space: nowrap;
-        left: ${currentTextLeftPos};
-        margin-top: ${currentTextTopMargin};
-        text-align: ${currentTextAlignment};
-        width: ${currentTextWidth};
+        left: 0px;
+        margin-top: 0.6em;
+        text-align: center;
+        width: 100%;
         padding-bottom: 0.2em;
       }
 
@@ -1175,7 +1132,7 @@ style() {
         color: var(--primary-text-color);
         list-style: none;
         padding: 0.2em;
-        margin-top: ${currentDataTopMargin};
+        margin-top: 0.5em;
       }
 
       .slotlist {
@@ -1190,7 +1147,7 @@ style() {
         color: var(--primary-text-color);
         list-style: none;
         padding: 0.2em;
-        margin-top: ${currentDataTopMargin};
+        margin-top: 0.5em;
       }
 
       .unit {
@@ -1202,14 +1159,14 @@ style() {
       }
 
       .summary {
-        font-size: ${summaryFontSize};
-        padding-top: ${summaryTopPadding};
+        font-size: 1em;
+        padding-top: 1em;
       }
 
       .forecast {
         width: 100%;
         margin: 0 auto;
-        height: ${forecastHeight}em;
+        height: 12.9em;
       }
 
       .day {
@@ -1248,9 +1205,9 @@ style() {
       .icon.bigger {
         width: 10em;
         height: 10em;
-        margin-top: ${largeIconTopMargin};
+        margin-top: -3em;
         position: absolute;
-        left: ${largeIconLeftPos};
+        left: 0px;
       }
 
       .icon {
@@ -1272,47 +1229,47 @@ style() {
       }
 
       .tcws {
-        width: ${tcwsWidth};
-        height: ${tcwsHeight};
-        margin-top: ${tcwsTopMargin};
+        width: 40px;
+        height: 40px;
+        margin-top: 40px;
         position: absolute;
-        left: ${tcwsLeftPos};
-        margin-left: ${tcwsLeftMargin};
+        left: 0em;
+        margin-left: 8.2em;
       }
 
       .ha-icon-yellow {
         height: 18px;
-        margin-right: ${warnsumIconMargin};
+        margin-right: 0px;
         color: #FFBF00;
       }
 
       .ha-icon-red {
         height: 18px;
-        margin-right: ${warnsumIconMargin};
+        margin-right: 0px;
         color: #EF4444;
       }
 
       .ha-icon-black {
         height: 18px;
-        margin-right: ${warnsumIconMargin};
+        margin-right: 0px;
         color: #606060;
       }
 
       .ha-icon-blue {
         height: 18px;
-        margin-right: ${warnsumIconMargin};
+        margin-right: 0px;
         color: #89CFF0;
       }
 
       .ha-icon-wfntsa {
         height: 18px;
-        margin-right: ${warnsumIconMargin};
+        margin-right: 0px;
         color: #97F8C3;
       }
 
       .ha-icon-wl {
         height: 18px;
-        margin-right: ${warnsumIconMargin};
+        margin-right: 0px;
         color: #675125;
       }
 
@@ -1335,14 +1292,14 @@ style() {
 
       .fcasttooltip .fcasttooltiptext {
         visibility: hidden;
-        width: ${tooltipWidth};
-        background-color: ${tooltipBGColor};
-        color: ${tooltipFGColor};
+        width: 110px;
+        background-color: rgb( 75,155,239);
+        color: #fff;
         text-align: center;
         border-radius: 6px;
         border-style: solid;
-        border-color: ${tooltipBorderColor};
-        border-width: ${tooltipBorderWidth}px;
+        border-color: rgb(255,161,0);
+        border-width: 1px;
         padding: 5px 0;
 
         /* Position the tooltip */
@@ -1350,7 +1307,7 @@ style() {
         z-index: 1;
         bottom: 50%;
         left: 0%;
-        margin-left: ${tooltipLeftOffset}px;
+        margin-left: -12px;
       }
 
       .fcasttooltip .fcasttooltiptext:after {
@@ -1358,14 +1315,14 @@ style() {
         position: absolute;
         top: 100%;
         left: 50%;
-        margin-left: -${tooltipCaretSize}px;
-        border-width: ${tooltipCaretSize}px;
+        margin-left: -5px;
+        border-width: 5px;
         border-style: solid;
-        border-color: ${tooltipBorderColor} transparent transparent transparent;
+        border-color: rgb(255,161,0) transparent transparent transparent;
       }
 
       .fcasttooltip:hover .fcasttooltiptext {
-        visibility: ${tooltipVisible};
+        visibility: visible;
       }
 
       .warninfotooltip {
@@ -1375,14 +1332,14 @@ style() {
 
       .warninfotooltip .warninfotooltiptext {
         visibility: hidden;
-        width: ${warntooltipWidth};
-        background-color: ${tooltipBGColor};
-        color: ${tooltipFGColor};
+        width: 200px;
+        background-color: rgb( 75,155,239);
+        color: #fff;
         text-align: center;
         border-radius: 6px;
         border-style: solid;
-        border-color: ${tooltipBorderColor};
-        border-width: ${tooltipBorderWidth}px;
+        border-color: rgb(255,161,0);
+        border-width: 1px;
         padding: 5px 0;
 
         /* Position the tooltip */
@@ -1390,7 +1347,7 @@ style() {
         z-index: 1;
         top: 100%;
         right: -100%;
-        margin-left: ${tooltipLeftOffset}px;
+        margin-left: -12px;
       }
 
       .warninfotooltip .warninfotooltiptext:after {
@@ -1398,14 +1355,14 @@ style() {
         position: absolute;
         bottom: 100%;
         right: 15%;
-        margin-left: -${tooltipCaretSize}px;
-        border-width: ${tooltipCaretSize}px;
+        margin-left: -5px;
+        border-width: 5px;
         border-style: solid;
-        border-color: transparent transparent ${tooltipBorderColor} transparent;
+        border-color: transparent transparent rgb(255,161,0) transparent;
       }
 
       .warninfotooltip:hover .warninfotooltiptext {
-        visibility: ${tooltipVisible};
+        visibility: visible;
       }
 
       .cancel {
