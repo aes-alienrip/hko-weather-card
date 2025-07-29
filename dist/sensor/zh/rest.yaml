@@ -215,16 +215,35 @@ rest:
         unique_id: hko_temperature
         unit_of_measurement: "°C"
         device_class: temperature
+        force_update: true
         value_template: >-
           {% set r = value.replace('\ufeff', '').split('\n') %}
           {% set ns = namespace(s="") %}
-          {% set stn = states('input_select.hko_temperature_station') %}
-          {% for i in r %}
-            {% if stn in i %}
-              {% set ns.s = i.split(',')[2] %}
+          {% if states('input_select.hko_temperature_station') != 'unavailable' and states('input_select.hko_temperature_station') != 'unknown' %}
+            {% set stn = states('input_select.hko_temperature_station') %}
+            {% for i in r %}
+              {% if stn in i %}
+                {% set ns.s = i.split(',')[2] %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% set default_station = '香港天文台' %}
+            {% for i in r %}
+              {% if default_station in i %}
+                {% set ns.s = i.split(',')[2] %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if ns.s and ns.s|string|trim != '' %}
+            {{ ns.s|float }}
+          {% else %}
+            {% set fallback = states('sensor.hko_temperature') %}
+            {% if fallback != 'unavailable' and fallback != 'unknown' and fallback|string|trim != '' %}
+              {{ fallback }}
+            {% else %}
+              {{ 'unknown' }}
             {% endif %}
-          {% endfor %}
-          {{ ns.s }}
+          {% endif %}
 
     ### https://www.hko.gov.hk/tc/wxinfo/ts/index_rh.htm ###
   - resource: https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_1min_humidity_uc.csv
@@ -234,16 +253,35 @@ rest:
         unique_id: hko_humidity
         unit_of_measurement: "%"
         device_class: humidity
+        force_update: true
         value_template: >-
           {% set r = value.replace('\ufeff', '').split('\n') %}
           {% set ns = namespace(s="") %}
-          {% set stn = states('input_select.hko_humidity_station') %}
-          {% for i in r %}
-            {% if stn in i %}
-              {% set ns.s = i.split(',')[2] %}
+          {% if states('input_select.hko_humidity_station') != 'unavailable' and states('input_select.hko_humidity_station') != 'unknown' %}
+            {% set stn = states('input_select.hko_humidity_station') %}
+            {% for i in r %}
+              {% if stn in i %}
+                {% set ns.s = i.split(',')[2] %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% set default_station = '香港天文台' %}
+            {% for i in r %}
+              {% if default_station in i %}
+                {% set ns.s = i.split(',')[2] %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if ns.s and ns.s|string|trim != '' %}
+            {{ ns.s|float }}
+          {% else %}
+            {% set fallback = states('sensor.hko_humidity') %}
+            {% if fallback != 'unavailable' and fallback != 'unknown' and fallback|string|trim != '' %}
+              {{ fallback }}
+            {% else %}
+              {{ 'unknown' }}
             {% endif %}
-          {% endfor %}
-          {{ ns.s }}
+          {% endif %}
 
     ### https://www.hko.gov.hk/tc/wxinfo/ts/index_pre.htm ###
   - resource: https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_1min_pressure_uc.csv
@@ -253,16 +291,35 @@ rest:
         unique_id: hko_pressure
         unit_of_measurement: "hPa"
         device_class: atmospheric_pressure
+        force_update: true
         value_template: >-
           {% set r = value.replace('\ufeff', '').split('\n') %}
           {% set ns = namespace(s="") %}
-          {% set stn = states('input_select.hko_pressure_station') %}
-          {% for i in r %}
-            {% if stn in i %}
-              {% set ns.s = i.split(',')[2] %}
+          {% if states('input_select.hko_pressure_station') != 'unavailable' and states('input_select.hko_pressure_station') != 'unknown' %}
+            {% set stn = states('input_select.hko_pressure_station') %}
+            {% for i in r %}
+              {% if stn in i %}
+                {% set ns.s = i.split(',')[2] %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% set default_station = '香港天文台' %}
+            {% for i in r %}
+              {% if default_station in i %}
+                {% set ns.s = i.split(',')[2] %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if ns.s and ns.s|string|trim != '' %}
+            {{ ns.s|float }}
+          {% else %}
+            {% set fallback = states('sensor.hko_pressure') %}
+            {% if fallback != 'unavailable' and fallback != 'unknown' and fallback|string|trim != '' %}
+              {{ fallback }}
+            {% else %}
+              {{ 'unknown' }}
             {% endif %}
-          {% endfor %}
-          {{ ns.s }}
+          {% endif %}
 
     ### https://www.hko.gov.hk/tc/wxinfo/ts/index_wind.htm ###
   - resource: https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_10min_wind_uc.csv
