@@ -1,11 +1,11 @@
 import {
   LitElement,
   html,
-} from "https://esm.run/lit-element@4.2.0/lit-element.js?module";
+} from "https://esm.run/lit-element@4.2.2/lit-element.js?module";
 
 // #### Add card info to console
 console.info(
-  `%cHKO-WEATHER-CARD\n%cVersion 1.2.2  `,
+  `%cHKO-WEATHER-CARD\n%cVersion 1.2.3  `,
   "color: #043ff6; font-weight: bold; background: white",
   "color: white; font-weight: bold; background: #043ff6"
 );
@@ -416,7 +416,7 @@ class HKOWeatherCard extends LitElement {
       var bearing = this.config.entity_wind_bearing ? html`<span id="wind-bearing-text">${this.currentWindBearing}</span>` : ``;
       var beaufort = this.config.entity_wind_speed && this.config.show_beaufort ? html`<span id="beaufort-text">Bft: ${this.currentBeaufort} - </span>` : ``;
       var speed = this.config.entity_wind_speed ? html`<span id="wind-speed-text"> ${this.currentWindSpeed}</span>` : ``;
-      var gust = this.config.entity_wind_gust ? html`<span id="wind-gust-text">${this.localeText.Gust} ${this.currentWindGust}</span>` : ``;
+      var gust = this.config.entity_wind_gust ? html`${this.localeText.Gust} <span id="wind-gust-text">${this.currentWindGust}</span>` : ``;
       var unit = html`<span class="unit-s">km/h</span>`;
       var icon = html`<span class="ha-icon"><ha-icon icon="mdi:weather-windy"></ha-icon></span>`;
       return this.config.entity_wind_bearing && this.config.entity_wind_speed && this.config.entity_wind_gust ? html`<li>${icon}${beaufort}${bearing}${speed}${unit} ( ${gust}${unit} )</li>` : this.config.entity_wind_bearing && this.config.entity_wind_speed ? html`<li>${icon}${beaufort}${bearing}${speed}${unit}</li>` : ``;
@@ -1069,11 +1069,12 @@ style() {
   var summaryTopPadding = this.config.summary_top_padding || "1em";
   var summaryFontSize = this.config.summary_font_size || "1em";
   var warnsumIconMargin = this.config.warnsum_icon_margin || "0px";
-  var tcwsWidth = this.config.tcws_width || "40px";
-  var tcwsHeight = this.config.tcws_height || "40px";
+  var tcwsSize = this.config.tcws_size || "40px";
   var tcwsTopMargin = this.config.tcws_top_margin || "40px";
   var tcwsLeftPos =  this.config.tcws_left_pos || "0em";
   var tcwsLeftMargin = this.config.tcws_left_margin || "8.2em";
+  var iconSize = this.config.icon_size || "55px";
+  var forecastFontSize = this.config.forecast_font_size || "14px";
   var oldDailyFormatHeight = this.config.old_daily_format === true ? 1.5 : 0;
   var popHeight = this.config.entity_pop_1 && this.config.entity_pop_2 && this.config.entity_pop_3 && this.config.entity_pop_4 && this.config.entity_pop_5 ? 1.5 : 0;
   var rhHeight = this.config.entity_forecast_high_rh_1 && this.config.entity_forecast_high_rh_2 && this.config.entity_forecast_high_rh_3 && this.config.entity_forecast_high_rh_4 && this.config.entity_forecast_high_rh_5 && this.config.entity_forecast_low_rh_1 && this.config.entity_forecast_low_rh_2 && this.config.entity_forecast_low_rh_3 && this.config.entity_forecast_low_rh_4 && this.config.entity_forecast_low_rh_5 ? 1.5 : 0;
@@ -1210,6 +1211,7 @@ style() {
         width: 100%;
         margin: 0 auto;
         height: ${forecastHeight}em;
+        font-size: ${forecastFontSize};
       }
 
       .day {
@@ -1254,8 +1256,8 @@ style() {
       }
 
       .icon {
-        width: 55px;
-        height: 55px;
+        width: ${iconSize};
+        height: ${iconSize};
         margin: auto;
         display: inline-block;
         background-size: contain;
@@ -1272,8 +1274,8 @@ style() {
       }
 
       .tcws {
-        width: ${tcwsWidth};
-        height: ${tcwsHeight};
+        width: ${tcwsSize};
+        height: ${tcwsSize};
         margin-top: ${tcwsTopMargin};
         position: absolute;
         left: ${tcwsLeftPos};
@@ -1505,7 +1507,7 @@ style() {
       if (this.config.entity_apparent_temp && (root.getElementById("apparent-text") !== null)) try { root.getElementById("apparent-text").textContent = `${this.currentApparent}` } catch(e) {}
       if (this.config.entity_wind_bearing && (root.getElementById("wind-bearing-text") !== null)) try { root.getElementById("wind-bearing-text").textContent = `${this.currentWindBearing}` } catch(e) {}
       if (this.config.entity_wind_speed && (root.getElementById("wind-speed-text") !== null)) try { root.getElementById("wind-speed-text").textContent = ` ${this.currentWindSpeed}` } catch(e) {}
-      if (this.config.entity_wind_gust && (root.getElementById("wind-gust-text") !== null)) try { root.getElementById("wind-gust-next").textContent = ` (Gust ${this.currentWindGust}` } catch(e) {}
+      if (this.config.entity_wind_gust && (root.getElementById("wind-gust-text") !== null)) try { root.getElementById("wind-gust-text").textContent = ` ${this.currentWindGust}` } catch(e) {}
       if (this.config.entity_visibility && (root.getElementById("visibility-text") !== null)) try { root.getElementById("visibility-text").textContent = `${this.currentVisibility}` } catch(e) {}
       if (this.config.entity_pop_intensity && !this.config.entity_pop_intensity_rate && (root.getElementById("intensity-text") !== null)) try { root.getElementById("intensity-text").textContent = ` - ${(Number(this._hass.states[this.config.entity_pop_intensity].state)).toLocaleString()}` } catch(e) {}
       if (this.config.entity_pop_intensity_rate && !this.config.entity_pop_intensity && (root.getElementById("intensity-text") !== null)) try { root.getElementById("intensity-text").textContent = ` - ${(Number(this._hass.states[this.config.entity_pop_intensity_rate].state)).toLocaleString()}` } catch(e) {}
