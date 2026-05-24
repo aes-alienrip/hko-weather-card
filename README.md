@@ -263,11 +263,11 @@ show_decimals: false
 | large_icon_top_margin    | **-3em** / px or em value          | Sets the top margin of the current conditions icon                          |
 | large_icon_left_pos      | **0px** / px or em value           | Sets the left position of the current conditions icon                       |
 | tcws_style               | og / grey / **noentry**            | Sets the style of tropical cyclone warning icon (Original / Grey / Color)   |
-| tcws_width               | **40px** / px or em value          | Sets the width of the tropical cyclone warning icon                         |
-| tcws_height              | **40px** / px or em value          | Sets the height of the tropical cyclone warning icon                        |
+| tcws_size                | **40px** / px or em value          | Sets the size of the tropical cyclone warning icon                          |
 | tcws_top_margin          | **40px** / px or em value          | Sets the top margin of the tropical cyclone warning icon                    |
 | tcws_left_pos            | **0em** / px or em value           | Sets the left position of the tropical cyclone warning icon                 |
 | tcws_left_margin         | **8.2em** / px or em value         | Sets the left margin of the tropical cyclone warning icon                   |
+| icon_size                | **55px** / px or em value          | Sets the size of the daily forecast icon                                    |
 | current_text_top_margin  | **0.2em** / px or em value         | Sets the top margin of the current text                                     |
 | current_text_left_pos    | **0px** / px or em value           | Sets the left position of the current text                                  |
 | current_text_font_size   | **2em** / em value                 | Sets the font size of the current text                                      |
@@ -287,6 +287,7 @@ show_decimals: false
 | tooltip_left_offset      | **-12**                            | Sets the offset of the left edge of the tooltip. In negative (-)x           |
 | summary_top_padding      | **1em** / px or em                 | Sets the gap between the Forecast and Summary Section                       |
 | summary_font_size        | **1em** / px or em                 | Sets the font size for the summary text                                     |
+| forecast_font_size       | **1em** / px or em                 | Sets the font size for the Forecast Section                                 |
 
 
 **Slots**
